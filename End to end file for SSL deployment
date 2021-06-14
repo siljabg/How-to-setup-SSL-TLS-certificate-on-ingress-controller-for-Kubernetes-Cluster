@@ -38,7 +38,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - goofy.link
+    - hotel.example.com
     secretName: selfsigned-cert-tls
   rules:
   - host: hotel.example.com
