@@ -5,6 +5,7 @@ export AWS_ACCESS_KEY_ID=<your_key>
 eksctl create cluster --name <clustername> --node-type t3.micro --nodes 2
 #ngnix ingress controler in ingress-nginx namespace. creating aws network load balanvcer NLB
 #add A record of NLB in your domain
+#to check latest controller versiongo to https://kubernetes.github.io/ingress-nginx/deploy/#aws
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/aws/deploy.yaml
 #cert-manager deploy
 kubectl create namespace cert-manager
