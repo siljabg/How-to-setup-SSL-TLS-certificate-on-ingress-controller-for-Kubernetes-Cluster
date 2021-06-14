@@ -1,9 +1,15 @@
+#ngnix ingress controler in ingress-nginx namespace. creating aws network load balanvcer NLB
+#add A record of NLB in your domain
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/aws/deploy.yaml
+#cert-manager deploy
 kubectl create namespace cert-manager
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.3.1/cert-manager.yaml
 kubectl get ns
 kubectl get pods --namespace cert-manager
 kubectl get all --namespace cert-manager
+#request for self-sign certificate, create namespace hotel, run web apps and service by running cert1.yaml. (just change example.hotel.com with your domain)
 kubectl apply -f cert1.yml
 kubectl get all --namespace hotel
 kubectl get certificate -n hotel
 kubectl describe certificate -n hotel
+# open in browser yourdomain
