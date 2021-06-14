@@ -14,7 +14,7 @@ kubectl get ns
 kubectl get pods --namespace cert-manager
 kubectl get all --namespace cert-manager
 #request for self-sign certificate, create namespace hotel, run web apps and service by running cert1.yaml. (just change example.hotel.com with your domain)
-kubectl apply -f cert1.yml
+kubectl apply -f cert1.yaml
 kubectl get all --namespace hotel
 kubectl get certificate -n hotel
 kubectl describe certificate -n hotel
