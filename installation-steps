@@ -1,3 +1,5 @@
+#create cluster using eksctl
+eksctl create cluster --name <clustername> --node-type t3.micro --nodes 2
 #ngnix ingress controler in ingress-nginx namespace. creating aws network load balanvcer NLB
 #add A record of NLB in your domain
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/aws/deploy.yaml
