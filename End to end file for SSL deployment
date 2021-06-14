@@ -25,7 +25,7 @@ spec:
     name: test-selfsigned
 ---
 
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hotel-ingress
@@ -37,17 +37,20 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   tls:
-  - hosts: 
-    - hotel.example.com
+  - hosts:
+    - goofy.link
     secretName: selfsigned-cert-tls
   rules:
-  - host: hotel.example.com 
+  - host: hotel.example.com
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: hotel-svc
-          servicePort: 80
+          service:
+            name: hotel-svc
+            port:
+              number: 80
         
 ---
 
